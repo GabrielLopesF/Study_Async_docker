@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'study_async.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ['NAME_DB'],
+        'USER': os.environ['USER_DB'],
+        'PASSWORD': os.environ['PASSWORD_DB'],
+        'HOST': os.environ['HOST_DB'],
+        'PORT': os.environ['PORT_DB'],
     }
 }
 
